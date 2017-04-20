@@ -1,33 +1,41 @@
-
 /**
- * Write a description of class Alquiler here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *franciscoJavier
  */
-public class Alquiler
-{
-    // instance variables - replace the example below with your own
-    private int x;
+class Alquiler {
+    
+    private int diasOcupacion;
+    private int posicionAmarre;
+    private Barco barco; 
 
+    public static final  int VALOR_MULTIPLICADOR_ESLORA = 10;
+    public Alquiler(int diasOcupacion, Barco barco, int posicionAmarre) {
+        this.diasOcupacion = diasOcupacion;
+        this.posicionAmarre = posicionAmarre;
+        this.barco = barco;
+    }
+    
     /**
-     * Constructor for objects of class Alquiler
+     * El precio del alquiler a pagar se calcula sumando el número de días de 
+     * ocupación multiplicado por un valor en función del barco (obtenido simplemente 
+     * multiplicando por 10 los metros de eslora), más un valor ﬁjo (300 euros) 
+     * multiplicado por el coeficiente de Bernua del barco.
+     * @return 
      */
-    public Alquiler()
-    {
-        // initialise instance variables
-        x = 0;
+    public double getPrecioAlquiler(){
+        double totalAPagar = 0;
+        int bernua = barco.getCoeficienteBernua();
+            totalAPagar =  diasOcupacion * (barco.getEslora() * 10) + barco.getCoeficienteBernua();
+        return totalAPagar;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    @Override
+    public String toString() {
+        
+        String datos = "";
+        datos += "Dias de alquiler; " +diasOcupacion+ " días.\n";
+        datos += "Número del amarre alquilado; " +posicionAmarre+ "\n";
+        datos += "Total a pagar por el alquiler del amarre; "+getPrecioAlquiler()+ " €.n";
+        return datos;
+    } 
+    
 }

@@ -1,25 +1,22 @@
-/**
- *
- * @author alumno
- */
 public abstract class  Barco {
     private Persona persona;
     private String matricula;
     private double eslora;
-    private int anioFabricacion;
-
-    public Barco(Persona persona, String matricula, double eslora, int anioFabricacion) {
+    private int anio;
+  
+    public static final int VALOR_MULTIPLICADOR_BERNUA = 300;
+    
+    public Barco(String matricula, double eslora, int anio, Persona persona) {
         this.persona = persona;
         this.matricula = matricula;
-        this.eslora = eslora;
-        this.anioFabricacion = anioFabricacion;
+        this.anio = anio;
     }
 
     public double getEslora() {
         return eslora;
     }
     
-    public abstract float getCoeficienteBernua();
+    public abstract int getCoeficienteBernua();
 
     @Override
     public String toString() {
@@ -27,7 +24,7 @@ public abstract class  Barco {
         datos += "Nombre propietario; " +persona.getName()+ "\n";
         datos += "Matrícula del barco; " +matricula+ "\n";
         datos += "Metros de eslora; " +eslora+ " m.\n";
-        datos += "Año de fabricación; " +anioFabricacion+ "\n";
+        datos += "Año de fabricación; " +anio+ "\n";
         return datos;
         
         

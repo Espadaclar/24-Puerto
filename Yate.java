@@ -1,33 +1,25 @@
-
 /**
- * Write a description of class Yate here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *franciscoJavier
  */
-public class Yate
-{
-    // instance variables - replace the example below with your own
-    private int x;
+class Yate extends EmbarcacionAMotor {
+    private int numCamarotes;
 
-    /**
-     * Constructor for objects of class Yate
-     */
-    public Yate()
-    {
-        // initialise instance variables
-        x = 0;
+    public Yate(String matricula, double eslora, int anio, Persona persona, int potencia, int numCamarotes) {
+        super(matricula, eslora, anio, persona, potencia);
+        this.numCamarotes = numCamarotes;
     }
+    
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public int getCoeficienteBernua() {
+       return VALOR_MULTIPLICADOR_BERNUA * (numCamarotes + getPotencia());
     }
+    
+    @Override
+    public String toString() {
+        String datos = super.toString();
+        datos += "Yate con " +numCamarotes+ " camarotes.\n";
+        return datos;
+    }
+      
 }

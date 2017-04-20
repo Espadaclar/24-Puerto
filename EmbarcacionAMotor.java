@@ -1,33 +1,29 @@
-
 /**
- * Write a description of class EmbarcacionAMotor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *franciscoJavier
  */
-public class EmbarcacionAMotor
-{
-    // instance variables - replace the example below with your own
-    private int x;
+class EmbarcacionAMotor extends Barco{
 
-    /**
-     * Constructor for objects of class EmbarcacionAMotor
-     */
-    public EmbarcacionAMotor()
-    {
-        // initialise instance variables
-        x = 0;
+    private int potencia;
+
+    public EmbarcacionAMotor(String matricula,double eslora, int anio, Persona persona, int potencia) {
+        super( matricula, eslora, anio, persona);
+        this.potencia = potencia;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public int getPotencia() {
+        return potencia;
     }
+    
+    @Override
+    public int getCoeficienteBernua() {
+       return VALOR_MULTIPLICADOR_BERNUA * potencia;
+    }
+    
+    @Override
+    public String toString() {
+        String datos = super.toString();
+        datos += "Embarcación a motor con " +potencia+ " caballos.\n";
+        return datos;
+    }
+    
 }
