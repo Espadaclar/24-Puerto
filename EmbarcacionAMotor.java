@@ -16,7 +16,7 @@ class EmbarcacionAMotor extends Barco{
     
     @Override
     public int getCoeficienteBernua() {
-       return VALOR_MULTIPLICADOR_BERNUA * potencia;
+       return  potencia;
     }
     
     @Override

@@ -7,11 +7,16 @@ class Alquiler {
     private int posicionAmarre;
     private Barco barco; 
 
+    public static final int VALOR_MULTIPLICADOR_BERNUA = 300;
     public static final  int VALOR_MULTIPLICADOR_ESLORA = 10;
     public Alquiler(int diasOcupacion, Barco barco, int posicionAmarre) {
         this.diasOcupacion = diasOcupacion;
         this.posicionAmarre = posicionAmarre;
         this.barco = barco;
+    }
+    
+    public int getPosicionAmarre() {
+        return posicionAmarre;
     }
     
     /**
@@ -23,8 +28,8 @@ class Alquiler {
      */
     public double getPrecioAlquiler(){
         double totalAPagar = 0;
-        int bernua = barco.getCoeficienteBernua();
-            totalAPagar =  diasOcupacion * (barco.getEslora() * 10) + barco.getCoeficienteBernua();
+        int bernua = barco.getCoeficienteBernua() * VALOR_MULTIPLICADOR_BERNUA;
+            totalAPagar =  diasOcupacion * (barco.getEslora() * 10) + bernua;
         return totalAPagar;
     }
 
@@ -34,7 +39,7 @@ class Alquiler {
         String datos = "";
         datos += "Dias de alquiler; " +diasOcupacion+ " días.\n";
         datos += "Número del amarre alquilado; " +posicionAmarre+ "\n";
-        datos += "Total a pagar por el alquiler del amarre; "+getPrecioAlquiler()+ " €.n";
+        datos += "Total a pagar por el alquiler del amarre; "+getPrecioAlquiler()+ " €.\n";
         return datos;
     } 
     

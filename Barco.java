@@ -3,8 +3,6 @@ public abstract class  Barco {
     private String matricula;
     private double eslora;
     private int anio;
-  
-    public static final int VALOR_MULTIPLICADOR_BERNUA = 300;
     
     public Barco(String matricula, double eslora, int anio, Persona persona) {
         this.persona = persona;

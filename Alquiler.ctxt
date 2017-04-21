@@ -2,8 +2,10 @@
 comment0.params=diasOcupacion\ barco\ posicionAmarre
 comment0.target=Alquiler(int,\ Barco,\ int)
 comment1.params=
-comment1.target=double\ getPrecioAlquiler()
-comment1.text=\r\n\ El\ precio\ del\ alquiler\ a\ pagar\ se\ calcula\ sumando\ el\ n\u00FAmero\ de\ d\u00EDas\ de\ \r\n\ ocupaci\u00F3n\ multiplicado\ por\ un\ valor\ en\ funci\u00F3n\ del\ barco\ (obtenido\ simplemente\ \r\n\ multiplicando\ por\ 10\ los\ metros\ de\ eslora),\ m\u00E1s\ un\ valor\ \uFB01jo\ (300\ euros)\ \r\n\ multiplicado\ por\ el\ coeficiente\ de\ Bernua\ del\ barco.\r\n\ @return\ \r\n
+comment1.target=int\ getPosicionAmarre()
 comment2.params=
-comment2.target=java.lang.String\ toString()
-numComments=3
+comment2.target=double\ getPrecioAlquiler()
+comment2.text=\r\n\ El\ precio\ del\ alquiler\ a\ pagar\ se\ calcula\ sumando\ el\ n\u00FAmero\ de\ d\u00EDas\ de\ \r\n\ ocupaci\u00F3n\ multiplicado\ por\ un\ valor\ en\ funci\u00F3n\ del\ barco\ (obtenido\ simplemente\ \r\n\ multiplicando\ por\ 10\ los\ metros\ de\ eslora),\ m\u00E1s\ un\ valor\ \uFB01jo\ (300\ euros)\ \r\n\ multiplicado\ por\ el\ coeficiente\ de\ Bernua\ del\ barco.\r\n\ @return\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

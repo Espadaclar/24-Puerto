@@ -12,7 +12,7 @@ class Yate extends EmbarcacionAMotor {
 
     @Override
     public int getCoeficienteBernua() {
-       return VALOR_MULTIPLICADOR_BERNUA * (numCamarotes + getPotencia());
+       return numCamarotes + getPotencia();
     }
     
     @Override
