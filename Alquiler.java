@@ -26,10 +26,14 @@ class Alquiler {
      * multiplicado por el coeficiente de Bernua del barco.
      * @return 
      */
-    public double getPrecioAlquiler(){
-        double totalAPagar = 0;
-        int bernua = barco.getCoeficienteBernua() * VALOR_MULTIPLICADOR_BERNUA;
-            totalAPagar =  diasOcupacion * (barco.getEslora() * 10) + bernua;
+    public float getPrecioAlquiler(){
+        float totalAPagar = 0;
+        //cambia el tipo double de barco.getEslora() a float.
+        double alquiler = (barco.getEslora() * VALOR_MULTIPLICADOR_ESLORA);
+        float alquilerEslora = (float)alquiler;
+        
+        float bernua = barco.getCoeficienteBernua() * VALOR_MULTIPLICADOR_BERNUA;
+        totalAPagar =  diasOcupacion * alquilerEslora + bernua;    
         return totalAPagar;
     }
 
@@ -37,8 +41,8 @@ class Alquiler {
     public String toString() {
         
         String datos = "";
-        datos += "Dias de alquiler; " +diasOcupacion+ " días.\n";
         datos += "Número del amarre alquilado; " +posicionAmarre+ "\n";
+        datos += "Dias de alquiler; " +diasOcupacion+ " días.\n";
         datos += "Total a pagar por el alquiler del amarre; "+getPrecioAlquiler()+ " €.\n";
         return datos;
     } 

@@ -12,7 +12,7 @@ class Velero extends Barco {
 
     @Override
     public int getCoeficienteBernua() {
-        return VALOR_MULTIPLICADOR_BERNUA * numMastiles;
+        return numMastiles;
     }
     
     @Override
